@@ -9,3 +9,18 @@
 .ng-pristine:not(form) {
     border-left: 1px solid #D3D3D3;
 }
+
+.app-pointer {
+  cursor: pointer;
+}
+
+.vertical-scrollable{
+  overflow-y: auto;
+  max-height: 335px;
+}
+
+.no-pad-bottom {
+  padding-bottom: 0;
+}
+
+

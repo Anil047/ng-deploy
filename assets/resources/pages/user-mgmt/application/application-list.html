@@ -3,7 +3,7 @@
 </alert-bs>
 <div class="panel panel-default">
 
-  <div class="panel-heading">Role List</div>
+  <div class="panel-heading">Application List</div>
 
   <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #myDt="mfDataTable"
          [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
@@ -16,7 +16,7 @@
         <mfDefaultSorter by="code">Code</mfDefaultSorter>
       </th>
       <th>
-        <mfDefaultSorter by="name">Role</mfDefaultSorter>
+        <mfDefaultSorter by="name">Application</mfDefaultSorter>
       </th>
       <th>
         Description

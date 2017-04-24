@@ -3,7 +3,7 @@
 </alert-bs>
 <div class="panel panel-default">
 
-  <div class="panel-heading">Role List</div>
+  <div class="panel-heading">User List</div>
 
   <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #myDt="mfDataTable"
          [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
@@ -13,13 +13,13 @@
       <th><input [disabled]="myDt.data.length==0" type="checkbox" (click)="onCheckBoxClk()"
                  [(ngModel)]="checkBoxState"/></th>
       <th>
-        <mfDefaultSorter by="code">Code</mfDefaultSorter>
+        <mfDefaultSorter by="code">UserName</mfDefaultSorter>
       </th>
       <th>
-        <mfDefaultSorter by="name">Role</mfDefaultSorter>
+        <mfDefaultSorter by="name">Email</mfDefaultSorter>
       </th>
       <th>
-        Description
+        Phone
       </th>
     </tr>
     <tr>
@@ -37,9 +37,9 @@
       </td>
       <td><input type="checkbox" (click)="onEachCheckBoxClk(item)" [(ngModel)]="item.checked"
                  class="checkbox checkbox-inline"/></td>
-      <td>{{item.code}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.description}}</td>
+      <td>{{item.username}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
     </tr>
     <tr *ngIf="myDt.data.length==0">
       <td colspan="5" class="text-center text-info"><h4><i class="fa fa-info-circle"></i> There are no records

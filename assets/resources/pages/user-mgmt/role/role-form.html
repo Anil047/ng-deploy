@@ -1,8 +1,7 @@
-<div class="alert alert-success alert-dismissible">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <h4><i class="icon fa fa-check"></i> Alert!</h4>
-  Success alert preview. This alert is dismissable.
-</div>
+<alert-bs [type]="formAttributeSettings.alertType" [dismissable]="formAttributeSettings.dismissable">
+  {{formAttributeSettings.msg}}
+</alert-bs>
+
 <form class="form-horizontal" [formGroup]="roleForm" (ngSubmit)="onSubmit($event)">
   <input formControlName="id" type="hidden"/>
   <div class="box-body">
@@ -45,8 +44,13 @@
 
   <div class="box-footer">
     <div class="col-sm-9">
-      <button type="submit" [disabled]="!roleForm.valid"  class="btn btn-primary btn-flat pull-right">{{buttonName}}</button>
-      <button *ngIf="buttonName==='Update'" (click)="onAddNewBtnClk()" [disabled]="buttonName==='Submit'" type="button" class="btn btn-success btn-flat pull-right margin-r-5"><i class="fa fa-plus"></i> Add New</button>
+      <button type="submit" [disabled]="!roleForm.valid" class="btn btn-primary btn-flat pull-right">
+        {{formAttributeSettings.buttonName}}
+      </button>
+      <button *ngIf="formAttributeSettings.buttonName==='Update'" (click)="onAddNewBtnClk()"
+              [disabled]="formAttributeSettings.buttonName==='Submit'" type="button"
+              class="btn btn-success btn-flat pull-right margin-r-5"><i class="fa fa-plus"></i> Add New
+      </button>
     </div>
     <div class="col-sm-3"></div>
   </div>
